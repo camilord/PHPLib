@@ -1,14 +1,15 @@
 # PHPLib
 PHP functions for C#
 
-<b>Introduction</b>
+#Introduction
+
 I found many people looking for functions in C# that works like in PHP. 
 Yes, I admit that PHP have a lot of useful functions that you can use 
 without reinventing the wheel. I am starting this repository to build 
 C# methods that works like PHP functions. Join me with this crusade and 
 make/write methods in C# that are more useful...
 
-Sample Usage:
+#Sample Usage:
 
 <pre>
 using System;
