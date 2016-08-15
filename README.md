@@ -11,7 +11,7 @@ make/write methods in C# that are more useful...
 
 #Sample Usage:
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
