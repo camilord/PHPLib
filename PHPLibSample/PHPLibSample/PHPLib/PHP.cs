@@ -14,7 +14,7 @@ namespace AlphaOneFilesSync.PHPLib
 
         public static bool preg_match(string pattern, string text)
         {
-            return (Regex.IsMatch(text, pattern, RegexOptions.IgnoreCase) ? true : false;
+            return (Regex.IsMatch(text, pattern, RegexOptions.IgnoreCase)) ? true : false;
         }
 
         public static string dirname(string filename)
@@ -45,6 +45,19 @@ namespace AlphaOneFilesSync.PHPLib
                 text += (text == "") ? txt : delimeter.ToString() + txt;
             }
             return text;
+        }
+
+        public static string md5(string text)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            byte[] dataMd5 = md5.ComputeHash(Encoding.Default.GetBytes(text));
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < dataMd5.Length; i++)
+            {
+                sb.AppendFormat("{0:x2}", dataMd5[i]);
+            }
+
+            return sb.ToString();
         }
 
         public static string md5_file(string fileName)
