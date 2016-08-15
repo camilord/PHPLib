@@ -11,7 +11,7 @@ make/write methods in C# that are more useful...
 
 #Sample Usage:
 
-<pre>
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,4 +36,4 @@ namespace PHPLibSample
         }
     }
 }
-</pre>
+```
