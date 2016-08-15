@@ -1,15 +1,21 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace PHPLib
+namespace AlphaOneFilesSync.PHPLib
 {
     class PHP
     {
+
+        public static bool preg_match(string pattern, string text)
+        {
+            return (Regex.IsMatch(text, pattern, RegexOptions.IgnoreCase) ? true : false;
+        }
 
         public static string dirname(string filename)
         {
@@ -17,6 +23,12 @@ namespace PHPLib
             tmp[(tmp.Length - 1)] = "";
             string txt = PHP.implode('\\', tmp);
             return txt;
+        }
+
+        public static string basename(string filename)
+        {
+            filename = Path.GetFileName(filename);
+            return filename;
         }
 
         public static string[] explode(char delimeter, string text)
@@ -64,7 +76,5 @@ namespace PHPLib
                 return "";
             }
         }
-
-
     }
 }
