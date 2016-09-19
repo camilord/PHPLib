@@ -12,6 +12,12 @@ namespace AlphaOneFilesSync.PHPLib
     class PHP
     {
 
+        public static Int32 time()
+        {
+            Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            return unixTimestamp;
+        }
+
         public static bool preg_match(string pattern, string text)
         {
             return (Regex.IsMatch(text, pattern, RegexOptions.IgnoreCase)) ? true : false;
@@ -19,6 +25,7 @@ namespace AlphaOneFilesSync.PHPLib
 
         public static string dirname(string filename)
         {
+            filename = filename.Replace("/", "\\");
             string[] tmp = PHP.explode('\\', filename);
             tmp[(tmp.Length - 1)] = "";
             string txt = PHP.implode('\\', tmp);
