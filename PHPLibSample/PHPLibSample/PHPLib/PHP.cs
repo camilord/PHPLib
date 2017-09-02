@@ -47,7 +47,7 @@ namespace AlphaOneFilesSync.PHPLib
 
         public static string implode(char delimeter, string[] words)
         {
-            string text = ""; ;
+            string text = "";
             foreach (var txt in words) {
                 text += (text == "") ? txt : delimeter.ToString() + txt;
             }
